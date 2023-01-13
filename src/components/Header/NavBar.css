@@ -1,0 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@600&display=swap');
+
+
+nav {
+    padding: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.nav-container {
+    flex: 2 1 40%;
+    min-width: 300px;
+    font-family: 'Arimo', sans-serif;
+    margin-left: .5rem;
+    text-align: left;
+}
+
+.nav-container ul {
+    list-style-type: none;  
+    padding: 0;
+}
+
+.nav-item  {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.25rem;
+    margin: .5rem 2vw;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item a:hover {
+    color: var(--link-hover);
+}
+
+.children-container {
+    flex: 1.5 0 20%;
+}
+
+.brand {
+    font-family: 'IM Fell French Canon SC', serif;
+    font-size: calc(1.5vw + 2.25rem);
+
+}
+.brand-blue {
+    color: #317ee4
+}
+
+.brand-red {
+    color: rgb(216, 112, 112)
+}
+
+
+
+
+
