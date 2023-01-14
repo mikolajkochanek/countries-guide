@@ -1,0 +1,7 @@
+
+
+
+function ContinentPage({continentName, image,}) {
+    
+
+}
