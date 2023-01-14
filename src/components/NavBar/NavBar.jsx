@@ -14,12 +14,15 @@ export default function NavBar({navItems, children}) {
             <span className="brand-blue">World </span>
             <span className="brand-red">Explorer</span>
         </div>
+        
         <div className='nav-container'>
             <ul>
                 {renderedNavItems}
             </ul>
         </div>
+
         {renderedChildren}
+        
         </nav>
 
 

@@ -1,0 +1,54 @@
+
+.card {
+    margin-top: 6.5vw;
+    width: 35vw;
+    height: 35vw;
+    min-height: 350px;
+    min-width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: relative;
+}
+
+.card:hover {
+    transform: translate(.2rem, .2rem);
+}
+
+.card-bottom-sheet {
+    position: absolute;
+    display: none;
+    padding: 5%;
+}
+
+.card-bottom-sheet a {
+    display: inline-block;
+    padding: 8px;
+    text-decoration: none;
+    background-color: rgb(169, 230, 109);
+    color: black;
+    border-radius: 1rem;
+}
+
+.card-bottom-sheet a:hover {
+    box-shadow: rgba(168, 235, 80, 0.829) 0px 4px 8px;
+}
+
+.card:hover .card-bottom-sheet  {
+    display: block;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(232, 232, 232, 0.837);
+    animation: animate-position .2s ease-out;
+    animation-fill-mode: forwards;
+
+    
+}
+
+@keyframes animate-position{
+    from {
+        top: 100%;
+    } 
+    to {
+        top: 0;
+    } 
+}
