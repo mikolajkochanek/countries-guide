@@ -2,12 +2,30 @@
 
 :root {
   --link-hover: rgb(253, 195, 4);
-  --card-hover: rgb(143, 81, 214)
 }
 
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
+button {
+  color: #ffffff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 1.25rem 1.875rem;
+  margin: 1rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  
+}
+
+@media (max-width: 860px) {
+  button {
+    padding: 8px;
+  }
+  }
 
 
 
