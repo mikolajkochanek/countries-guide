@@ -15,7 +15,7 @@ nav {
 .nav-container {
     flex: 2 1 40%;
     min-width: 300px;
-    font-family: 'Arimo', sans-serif;
+    font-weight: 600;
     margin-left: .5rem;
     text-align: left;
 }

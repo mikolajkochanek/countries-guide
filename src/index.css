@@ -2,7 +2,6 @@
 
 :root {
   --link-hover: rgb(253, 195, 4);
-  --selection: rgb(253, 195, 4);
   --card-hover: rgb(143, 81, 214)
 }
 
@@ -10,9 +9,6 @@
   box-sizing: border-box;
 }
 
-::selection {
-  background-color: var(--selection);
-}
 
 
 
