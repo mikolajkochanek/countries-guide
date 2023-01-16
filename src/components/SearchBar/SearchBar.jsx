@@ -4,6 +4,7 @@ import './SearchBar.css';
 
 function SearchBar() {
     const [searchText, setSearchText] = useState('');
+
   
     return (
       <div className="search-container">

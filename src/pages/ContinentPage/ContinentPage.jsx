@@ -1,14 +1,23 @@
-import './ContinentPage.css'
 import {useRef, useEffect} from 'react'
+import { useParams } from "react-router-dom";
 import {data} from '../../utils'
 import SearchBar from '../../components/SearchBar/SearchBar';
+import CountryInfo from '../../components/CountryInfo/CountryInfo';
+import MexicoCity from '../../images/mexico-city.jpg'
+import './ContinentPage.css'
 
 
-function ContinentPage({continentName, image,}) {
+function ContinentPage() {
+
+    const {continent} = useParams()
+
+    const continentName = continent;
 
     const searchSection = useRef(null);
 
     const {name, description} = data[continentName].countryExample;
+
+    const image = MexicoCity;
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -31,7 +40,7 @@ function ContinentPage({continentName, image,}) {
         </section>
 
         <section style={{height: '40vh', width: '100%'}} className="results" id="search" ref={searchSection} >
-            a
+            <CountryInfo></CountryInfo>
         </section>
     </div>
 

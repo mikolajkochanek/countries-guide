@@ -1,5 +1,6 @@
 import './ContinentCard.css'
-import {Route, Routes, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import CountryInfo from '../CountryInfo/CountryInfo'
 export default function ContinentCard({continentImage, title, description, linkTo}) {
 
     return (
@@ -10,6 +11,9 @@ export default function ContinentCard({continentImage, title, description, linkT
                 <p>{description}</p>
                 <Link to={linkTo}>Explore</Link>
             </div>
+            
+
+
         </div>
     )
 

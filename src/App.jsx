@@ -24,10 +24,10 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<MainPage/>}/>
-          <Route path='/continent/africa' element={<ContinentPage continentName="africa" image={Pyramids} />}/>
-          <Route path='/continent/asia' element={<ContinentPage continentName="asia" image={GreatWall}  />}/>
-          <Route path='/continent/europe' element={<ContinentPage continentName="europe" image={Eifel}  />}/>
-          <Route path='/continent/america' element={<ContinentPage continentName="america" image={MexicoCity}  />}/>
+          <Route path='/continent/:continent' element={<ContinentPage continentName="africa" image={Pyramids} />}/>
+          <Route path='/continent/:continent' element={<ContinentPage continentName="asia" image={GreatWall}  />}/>
+          <Route path='/continent/:continent' element={<ContinentPage continentName="europe" image={Eifel}  />}/>
+          <Route path='/continent/:continent' element={<ContinentPage continentName="america" image={MexicoCity}  />}/>
         
         </Routes>
         
