@@ -5,10 +5,9 @@ import ContinentPage from './pages/ContinentPage/ContinentPage';
 import './App.css'
 
 const navLinks= [
-  <Link to="/">Test</Link>, 
-  <Link to="/">Test</Link>,
-  <Link to="/">Test</Link>, 
-  <Link to="/">Test</Link>,
+  <Link to="/">Continents</Link>, 
+  <Link to="/all">All</Link>,
+
 ]
 
 
