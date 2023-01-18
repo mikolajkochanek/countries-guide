@@ -9,7 +9,9 @@ import './ContinentPage.css'
 function filterBySubstring(array, substring) {
     console.log(typeof array, typeof substring)
 
-    return array.filter(el => el.name.common.includes(substring) || el.name.official.includes(substring));
+    const array2 =  array.filter(el => el.name.common.includes(substring.trim()) || el.name.official.includes(substring.trim()));
+    console.log(array2)
+    return array2;
 
 }
 
@@ -25,6 +27,8 @@ function ContinentPage() {
     const [searchValue, setSearchValue] = useState('');
 
     const [countriesList, setCountriesList] = useState([]);
+
+    const [filteredCountriesList, setFilteredCountriesList] = useState([]);
 
     const { continentName } = useParams();
 
@@ -45,9 +49,10 @@ function ContinentPage() {
       
               const data = await res.json();
 
-              console.log(data)
+              console.log('elo')
 
               setCountriesList(data);
+              setFilteredCountriesList(data);
 
               setIsLoading(false);
 
@@ -70,8 +75,8 @@ function ContinentPage() {
 
     const handleSubmit = () => {
         const list = filterBySubstring(countriesList, searchValue)
-        console.log(searchValue)
-        setCountriesList(list)
+  
+        setFilteredCountriesList(list)
     }
    
 
@@ -93,7 +98,7 @@ function ContinentPage() {
         </section>
         <div ref={countriesSection}>
         
-            <CountriesList countriesList={countriesList} isLoading={isLoading} error={error} />
+            <CountriesList countriesList={filteredCountriesList} isLoading={isLoading} error={error} />
 
         </div>
         
