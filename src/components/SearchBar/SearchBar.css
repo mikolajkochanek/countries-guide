@@ -6,9 +6,9 @@
   
   input[type="text"] {
     padding: 12px 20px;
-    margin: 8px;
+    margin: 6px;
     display: inline-block;
-    width: calc(70vw - 2rem) ;
+    width: calc(70vw - 3rem) ;
     max-width: 500px;
     text-align: left;
     border: 2px solid #ccc;

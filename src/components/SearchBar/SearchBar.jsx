@@ -1,20 +1,20 @@
-import React, {useState} from 'react'
 import './SearchBar.css';
+import { FiFilter } from 'react-icons/fi';
 
 
-function SearchBar() {
-    const [searchText, setSearchText] = useState('');
+function SearchBar({value, onChange, onClick}) {
 
-  
+
     return (
       <div className="search-container">
+        <FiFilter style={{width: '2rem', height: '2rem'}}/>
         <input
           type="text"
-          placeholder="Search..."
-          value={searchText}
-          onChange={e => setSearchText(e.target.value)}
+          placeholder="Search country"
+          value={value}
+          onChange={e => onChange(e.target.value)}
         />
-        <button>Search</button>
+        <button onClick={onClick}>Search</button>
       </div>
     );
   }
