@@ -1,35 +1,38 @@
 import {useRef, useEffect} from 'react'
 import { useParams } from "react-router-dom";
-import {data} from '../../utils'
+
 import SearchBar from '../../components/SearchBar/SearchBar';
 import CountryInfo from '../../components/CountryInfo/CountryInfo';
-import MexicoCity from '../../images/mexico-city.jpg'
+import { continentData, continentImage } from '../../utils'
 import './ContinentPage.css'
 
 
 function ContinentPage() {
 
-    const {continent} = useParams()
+    const { continentName } = useParams();
 
-    const continentName = continent;
+    const {countryName, countryDescription} = continentData[continentName].countryExample;
 
     const searchSection = useRef(null);
 
-    const {name, description} = data[continentName].countryExample;
-
-    const image = MexicoCity;
+    const image = continentImage[continentName];
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
+        
+        return () => {
+            window.scroll(0,0)
+        };
+      }, []);
+
+   
 
     return (
     <div>
         <section className='hero' style={{background: `url(${image})`, backgroundSize: 'cover',
         backgroundPosition: 'center right', backgroundRepeat: 'no-repeat'}}>
             <div className='info'>
-                <h2>{name}</h2>
-                <p>{description}</p>
+                <h2>{countryName}</h2>
+                <p>{countryDescription}</p>
                 <button onClick={() => {searchSection.current.scrollIntoView({ behavior: "smooth" })}}>
                     Discover other countries
                 </button>
@@ -38,10 +41,9 @@ function ContinentPage() {
         <section style={{width: '100%', height: '15vh'}}>
             <SearchBar></SearchBar>
         </section>
+        <CountryInfo/>
 
-        <section style={{height: '40vh', width: '100%'}} className="results" id="search" ref={searchSection} >
-            <CountryInfo></CountryInfo>
-        </section>
+
     </div>
 
     )

@@ -3,7 +3,7 @@ import Africa from "../images/africa.png"
 import Europe from "../images/europe.jpg"
 import Asia from "../images/asia.png"
 import America from "../images/americas.png"
-import { data }  from "../utils"
+import { continentData }  from "../utils"
 
 
 function MainPage() {
@@ -12,10 +12,10 @@ function MainPage() {
         <>
             <h2>Select continent to explore...</h2>
             <div className='continent-card-container' >
-            <ContinentCard continentImage={Africa} title="Africa" description={data.africa.description} linkTo='/continent/africa'/>
-            <ContinentCard continentImage={Europe}  title="Europe" description={data.europe.description} linkTo='/continent/europe'/>
-            <ContinentCard continentImage={Asia}  title="Asia" description={data.asia.description} linkTo='/continent/asia'/>
-            <ContinentCard continentImage={America} title="America" description={data.america.description} linkTo='/continent/america'/>
+            <ContinentCard continentImage={Africa} title="Africa" description={continentData.africa.description} linkTo='/continent/africa'/>
+            <ContinentCard continentImage={Europe}  title="Europe" description={continentData.europe.description} linkTo='/continent/europe'/>
+            <ContinentCard continentImage={Asia}  title="Asia" description={continentData.asia.description} linkTo='/continent/asia'/>
+            <ContinentCard continentImage={America} title="America" description={continentData.america.description} linkTo='/continent/america'/>
             </div>
         </>
     )
