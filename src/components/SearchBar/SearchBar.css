@@ -1,14 +1,14 @@
-.search-container {
+.searchbar-container {
+    margin-left: 1.25rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
   
   input[type="text"] {
     padding: 12px 20px;
-    margin: 6px;
     display: inline-block;
-    width: calc(70vw - 3rem) ;
+    min-width: calc(60vw - 4rem) ;
     max-width: 500px;
     text-align: left;
     border: 2px solid #ccc;

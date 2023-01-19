@@ -1,5 +1,6 @@
 
 .results {
+  min-height: 50vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

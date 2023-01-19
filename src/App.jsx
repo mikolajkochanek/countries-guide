@@ -2,6 +2,7 @@ import {Route, Routes, Link} from 'react-router-dom'
 import NavBar from "./components/NavBar/NavBar";
 import MainPage from './pages/MainPage';
 import ContinentPage from './pages/ContinentPage/ContinentPage';
+import AllCountriesPage from './pages/AllCountries/AllCountries';
 import './App.css'
 
 const navLinks= [
@@ -19,6 +20,7 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<MainPage/>}/>
+          <Route path='/all' element={<AllCountriesPage/>}/>
           <Route path='/continent/:continentName' element={<ContinentPage/>}/>
         </Routes>
         

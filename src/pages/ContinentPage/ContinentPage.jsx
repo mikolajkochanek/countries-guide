@@ -3,26 +3,26 @@ import { useParams } from "react-router-dom";
 import SearchBar from '../../components/SearchBar/SearchBar';
 import CountriesList from '../../components/CountriesList/CountriesList';
 import { continentData, continentImage } from '../../utils'
+import Dropdown from '../../components/DropDown/DropDown';
+import { AiFillFilter} from 'react-icons/ai'
 import './ContinentPage.css'
 
 
 function filterBySubstring(array, substring) {
-    console.log(typeof array, typeof substring)
+    
 
-    const array2 =  array.filter(el => el.name.common.includes(substring.trim()) || el.name.official.includes(substring.trim()));
-    console.log(array2)
+    const array2 =  array.filter(el => el.name.common.toLowerCase().includes(substring.trim().toLowerCase()) || el.name.official.toLowerCase().includes(substring.trim().toLowerCase()));
+
     return array2;
 
 }
-
-
 
 
 function ContinentPage() {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    const [error, setError] = useState("");
+    const [error, setError] = useState('');
 
     const [searchValue, setSearchValue] = useState('');
 
@@ -32,11 +32,15 @@ function ContinentPage() {
 
     const { continentName } = useParams();
 
-    const {countryName, countryDescription} = continentData[continentName].countryExample;
-
     const countriesSection = useRef(null);
 
+    const {countryName, countryDescription} = continentData[continentName].countryExample;
+
     const image = continentImage[continentName];
+
+    const options = [
+        {label: "Population", value: "1111"},
+        {label: "Druga opcja", value: "22222"}, ]
 
 
     useEffect(() => {
@@ -48,8 +52,6 @@ function ContinentPage() {
               if (!res.ok) throw new Error("Could not found!");
       
               const data = await res.json();
-
-              console.log('elo')
 
               setCountriesList(data);
               setFilteredCountriesList(data);
@@ -74,6 +76,7 @@ function ContinentPage() {
 
 
     const handleSubmit = () => {
+
         const list = filterBySubstring(countriesList, searchValue)
   
         setFilteredCountriesList(list)
@@ -92,14 +95,16 @@ function ContinentPage() {
                 </button>
             </div>      
         </section>
-        <section style={{width: '100%', height: '15vh'}}>
+        <section style={{width: '100%',}} className="search-container">
             
+            <p className='search-container'>Search by</p>
+            <Dropdown options={options} ></Dropdown>
             <SearchBar value={searchValue} onChange={setSearchValue} onClick={handleSubmit}/>
         </section>
         <div ref={countriesSection}>
         
             <CountriesList countriesList={filteredCountriesList} isLoading={isLoading} error={error} />
-
+ 
         </div>
         
 

@@ -12,6 +12,18 @@
     
 }
 
+.search-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+  }
+
+.search-container p {
+      margin: 1.25rem;
+  }
+
 .info {
     margin: 15% 1rem;
     padding: .75rem;

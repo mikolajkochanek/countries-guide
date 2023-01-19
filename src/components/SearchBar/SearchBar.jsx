@@ -6,8 +6,7 @@ function SearchBar({value, onChange, onClick}) {
 
 
     return (
-      <div className="search-container">
-      
+      <div className={'searchbar-container'}>
         <input
           type="text"
           placeholder="Search country"
