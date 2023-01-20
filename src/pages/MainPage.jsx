@@ -12,10 +12,10 @@ function MainPage() {
         <>
             <h2>Select continent to explore...</h2>
             <div className='continent-card-container' >
-            <ContinentCard continentImage={Africa} title="Africa" description={continentData.africa.description} linkTo='/continent/africa'/>
-            <ContinentCard continentImage={Europe}  title="Europe" description={continentData.europe.description} linkTo='/continent/europe'/>
-            <ContinentCard continentImage={Asia}  title="Asia" description={continentData.asia.description} linkTo='/continent/asia'/>
-            <ContinentCard continentImage={America} title="America" description={continentData.america.description} linkTo='/continent/america'/>
+            <ContinentCard continentImage={Africa} title="Africa" description={continentData.africa.description} linkTo='/countries-guide/continent/africa'/>
+            <ContinentCard continentImage={Europe}  title="Europe" description={continentData.europe.description} linkTo='/countries-guide/continent/europe'/>
+            <ContinentCard continentImage={Asia}  title="Asia" description={continentData.asia.description} linkTo='/countries-guide/continent/asia'/>
+            <ContinentCard continentImage={America} title="America" description={continentData.america.description} linkTo='/countries-guide/continent/america'/>
             </div>
         </>
     )

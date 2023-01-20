@@ -5,7 +5,7 @@ import ContinentPage from './pages/ContinentPage/ContinentPage';
 import './App.css'
 
 const navLinks= [
-  <Link to="/">Continents</Link>, 
+  <Link to="/countries-guide/">Continents</Link>, 
   
 ]
 
@@ -17,8 +17,8 @@ function App() {
       <NavBar navItems={navLinks} />
       <main>
         <Routes>
-          <Route path='/' element={<MainPage/>}/>
-          <Route path='/continent/:continentName' element={<ContinentPage/>}/>
+          <Route path='/countries-guide/' element={<MainPage/>}/>
+          <Route path='/countries-guide/continent/:continentName' element={<ContinentPage/>}/>
         </Routes>
         
       </main>
