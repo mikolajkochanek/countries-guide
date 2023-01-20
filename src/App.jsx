@@ -7,8 +7,7 @@ import './App.css'
 
 const navLinks= [
   <Link to="/">Continents</Link>, 
-  <Link to="/all">All</Link>,
-
+  
 ]
 
 
@@ -20,7 +19,6 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<MainPage/>}/>
-          <Route path='/all' element={<AllCountriesPage/>}/>
           <Route path='/continent/:continentName' element={<ContinentPage/>}/>
         </Routes>
         
