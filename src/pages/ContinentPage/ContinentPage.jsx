@@ -13,7 +13,23 @@ function filterBySubstring(array, substring) {
     const array2 =  array.filter(el => el.name.common.toLowerCase().includes(substring.trim().toLowerCase()) || el.name.official.toLowerCase().includes(substring.trim().toLowerCase()));
 
     return array2;
+}
 
+function sortCountriesList(array, criteria) {
+
+    const sortedArray = [...array];
+
+    if(criteria === 'alphabet') {
+        sortedArray.sort((a, b) => a.name.common.localeCompare(b.name.common))
+    }
+    else if(criteria ==='population') {
+
+        sortedArray.sort(function(a, b) {
+            return a.population - b.population;
+          });
+
+    }
+    return sortedArray;
 }
 
 
@@ -27,24 +43,24 @@ function ContinentPage() {
    
     const [searchValue, setSearchValue] = useState('');
 
-    const [sortCriteria, setSortCriteria] = useState('population');
+    const [sortCriteria, setSortCriteria] = useState(null);
 
     const countriesSection = useRef(null);
 
     const { countryName, countryDescription, image} = continentData[continentName].countryExample;
 
     const dropdownOptions = [
-        {label: "population", value: "population"},
-        {label: "alphabet", value: "alphabet"}, 
+        {label: "Population", value: "population"},
+        {label: "Alphabet", value: "alphabet"}, 
     ]
 
    
-
     useEffect(() => {
 
      getCountriesByContinent().then(countries => 
         {
          setFilteredCountriesList(countries)
+         console.log(countries)
         
         });
         
@@ -53,11 +69,22 @@ function ContinentPage() {
         }
     }, [])
 
+    useEffect(() => {
+        setFilteredCountriesList(sortCountriesList(filteredCountriesList, sortCriteria)) 
+    }, [sortCriteria])
 
-    const handleSubmit = () => {
+    const handleDropdownChange = (option) => {
+
+        setSortCriteria(option.value);        
+    }
+
+
+    const handleSubmit = (event) => {
+
+        event.preventDefault()
 
         const list = filterBySubstring(countriesList, searchValue)
-  
+
         setFilteredCountriesList(list)
     }
    
@@ -76,11 +103,17 @@ function ContinentPage() {
         </section>
         <section style={{width: '100%',}} className="search-container">
             
-            <p>Search by</p>
+            <p>Sort: </p>
 
-            <Dropdown options={dropdownOptions} />
+            <Dropdown options={dropdownOptions} onChange={handleDropdownChange} value={sortCriteria}/>
 
-            <SearchBar value={searchValue} onChange={setSearchValue} onClick={handleSubmit}/>
+            <SearchBar value={searchValue} onChange={setSearchValue} onSubmit={handleSubmit}/>
+
+            <button onClick={() => {
+                setSortCriteria(null)
+                setSearchValue('')
+                setFilteredCountriesList(countriesList)
+            }}>Reset</button>
 
         </section>
         <div ref={countriesSection}>

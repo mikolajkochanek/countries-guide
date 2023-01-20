@@ -2,19 +2,23 @@ import './SearchBar.css';
 
 
 
-function SearchBar({value, onChange, onClick}) {
+function SearchBar({value, onChange, onSubmit}) {
 
 
     return (
-      <div className={'searchbar-container'}>
+      <form onSubmit={onSubmit}>
+        <div className={'searchbar-container'}>
         <input
           type="text"
           placeholder="Search country"
           value={value}
           onChange={e => onChange(e.target.value)}
         />
-        <button onClick={onClick}>Search</button>
+        <button onClick={onSubmit}>Search</button>
       </div>
+
+      </form>
+      
     );
   }
 
