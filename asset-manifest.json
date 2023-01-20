@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/countries-guide/static/css/main.9ed8d4e5.css",
+    "main.js": "/countries-guide/static/js/main.35772c4c.js",
+    "static/media/asia.png": "/countries-guide/static/media/asia.4d28a69a14b048db3c11.png",
+    "static/media/pyramids.jpg": "/countries-guide/static/media/pyramids.a76ecba5ca1d93d4f6be.jpg",
+    "static/media/mexico-city.jpg": "/countries-guide/static/media/mexico-city.dea3e323cd5d21721a47.jpg",
+    "static/media/europe.jpg": "/countries-guide/static/media/europe.6c4c8184c91f8fdfbdd3.jpg",
+    "static/media/Eifel.jpg": "/countries-guide/static/media/Eifel.251f628b058a09d4c6ae.jpg",
+    "static/media/GreatWall.jpg": "/countries-guide/static/media/GreatWall.d92c7dfefbddf1712629.jpg",
+    "static/media/africa.png": "/countries-guide/static/media/africa.5131f6b6f40f8cb45763.png",
+    "static/media/americas.png": "/countries-guide/static/media/americas.169db2d8b34006cdd521.png",
+    "index.html": "/countries-guide/index.html",
+    "main.9ed8d4e5.css.map": "/countries-guide/static/css/main.9ed8d4e5.css.map",
+    "main.35772c4c.js.map": "/countries-guide/static/js/main.35772c4c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ed8d4e5.css",
+    "static/js/main.35772c4c.js"
+  ]
+}
